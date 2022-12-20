@@ -46,7 +46,7 @@ const app = createApp({
       <SignInPage
         {...props}
         auto
-        providers={[ {
+        providers={[ 'guest', {
           id: 'github-auth-provider',
           title: 'GitHub',
           message: 'Sign in using GitHub',
