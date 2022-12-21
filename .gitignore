@@ -48,3 +48,6 @@ site
 
 # Sensitive credentials
 *-credentials.yaml
+
+# Office temporary change files
+~$*.*
