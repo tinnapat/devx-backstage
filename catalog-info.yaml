@@ -12,5 +12,5 @@ metadata:
     backstage.io/adr-location: docs/adrs
 spec:
   type: website
-  owner: john@example.com
+  owner: tinnapat@gmail.com
   lifecycle: experimental
