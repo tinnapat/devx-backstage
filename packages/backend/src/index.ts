@@ -21,6 +21,7 @@ import {
 } from '@backstage/backend-common';
 import { TaskScheduler } from '@backstage/backend-tasks';
 import { Config } from '@backstage/config';
+import adr from './plugins/adr';
 import app from './plugins/app';
 import auth from './plugins/auth';
 import catalog from './plugins/catalog';
@@ -85,7 +86,7 @@ async function main() {
   const techdocsEnv = useHotMemoize(module, () => createEnv('techdocs'));
   const searchEnv = useHotMemoize(module, () => createEnv('search'));
   const appEnv = useHotMemoize(module, () => createEnv('app'));
-
+  const adrEnv = useHotMemoize(module, () => createEnv('adr'));
   const apiRouter = Router();
   apiRouter.use('/catalog', await catalog(catalogEnv));
   apiRouter.use('/scaffolder', await scaffolder(scaffolderEnv));
@@ -93,6 +94,7 @@ async function main() {
   apiRouter.use('/techdocs', await techdocs(techdocsEnv));
   apiRouter.use('/proxy', await proxy(proxyEnv));
   apiRouter.use('/search', await search(searchEnv));
+  apiRouter.use('/adr', await adr(adrEnv));
 
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());
