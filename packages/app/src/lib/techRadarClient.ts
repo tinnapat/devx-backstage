@@ -25,7 +25,9 @@ import readXlsxFile from 'read-excel-file'
   };
   
   export class TechRadarClient implements TechRadarApi {
-    async load(id: string | undefined): Promise<TechRadarLoaderResponse> {
+    async load(): Promise<TechRadarLoaderResponse> {
+        // clear existing array of items
+        entries.length = 0
         await fetch('/techradar/data.xlsx')
             .then(response => response.blob())
             .then(blob => readXlsxFile(blob, {}))
