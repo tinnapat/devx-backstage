@@ -36,8 +36,6 @@ backend:
     #  port: ${PG_PORT}
     #  user: ${PG_USER}
     #  password: ${PG_PASSWORD}    
-  cache:
-    store: memory
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
 integrations:
