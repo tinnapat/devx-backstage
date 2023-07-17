@@ -1,4 +1,5 @@
 site_name: devx-backstage
+repo_url: https://github.com/tinnapat/devx-backstage
 
 plugins:
   - techdocs-core
